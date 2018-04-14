@@ -1,0 +1,107 @@
+ <!DOCTYPE html>
+<html>
+{% load pwa %}
+{% load static %}
+<head>
+	{% progressive_web_app_meta %}
+	<title>Feeds</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<style type="text/css">
+
+	
+		.dropdown-span{
+			text-align: center;
+			color: white;
+			background-color: #5bc0de;
+		}
+		span{
+			color: white;
+		}
+		.footer{
+			text-align: center;
+			position: absolute;
+			padding:10px;
+			color: white;
+			width: 100%;
+			bottom:0;
+		}
+		.alink{
+			text-decoration: none;
+			color: white;
+		}
+		.alink:hover{
+			text-decoration: none;
+			color: white;
+		}
+		#content{
+			padding-bottom: 5%;
+		}
+		html,body{
+			margin: 0;
+		  	padding: 0;
+		  	height: 100%;
+		}
+		.wrapper{
+			position: relative;
+			min-height: 100%;
+        }
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#"><h2>Feeds</h2></a>
+			
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  	</button>
+
+		  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  		<ul class="navbar-nav mr-auto">
+		  			
+		  			<li class="nav-item active">
+			        	<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			      	</li>
+			      	<li class="nav-item active">
+			        	<a class="nav-link" href="#">About us</a>
+			      	</li>
+		  			
+		  		</ul>
+
+		  		<ul class="navbar-nav navbar-right">
+		  			<li class="nav-item">
+						
+					</li>	
+		  	</ul>
+		  	</div>
+
+		</nav>
+		<div id="content" class="container">
+			<br><br><br>
+			{% block content %}
+
+			{% endblock %}
+			<script type="text/javascript">
+			var jsondata="{{jsondata}}".replace(/&quot;/g,"\"");
+		</script>
+		<script type="text/javascript" src="{% static 'js/idb.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/idbop.js' %}"></script>
+		</div>
+		<div class="footer bg-dark">
+			<p>&copy Feeds 2018</p>
+			<a class="alink" href="#">Privacy policy</a>&nbsp
+			<a class="alink" href="#">Contact us</a>
+		</div>
+	</div>
+</body>
+</html>
