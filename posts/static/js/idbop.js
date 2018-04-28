@@ -7,7 +7,15 @@ var dbPromise = idb.open('feeds-db', 5, function(upgradeDb) {
 	fetch('http://127.0.0.1:8000/getdata').then(function(response){
 		return response.json();
 	}).then(function(jsondata){
-		console.log(jsondata);
+		dbPromise.then(function(db){
+			var tx = db.transaction('feeds', 'readwrite');
+	  		var feedsStore = tx.objectStore('feeds');
+	  		for(var key in jsondata){
+	  			if (jsondata.hasOwnProperty(key)) {
+			    	feedsStore.put(jsondata[key]);	
+			  	}
+	  		}
+		});
 	});
 
 	//retrive data from idb and display on page
@@ -21,13 +29,10 @@ var dbPromise = idb.open('feeds-db', 5, function(upgradeDb) {
 		  	document.getElementById('offlinedata').innerHTML=post;
 		    return;
 		  }
-		  console.log('Cursored at:', cursor.key);
 		  for (var field in cursor.value) {
 		    	if(field=='fields'){
 		    		feedsData=cursor.value[field];
 		    		for(var key in feedsData){
-		    			console.log("key is "+key);
-		    			console.log("value is "+feedsData[key]);
 		    			if(key =='title'){
 		    				var title = '<h3>'+feedsData[key]+'</h3>';
 		    			}
