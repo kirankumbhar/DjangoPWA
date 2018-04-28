@@ -7,6 +7,7 @@ self.addEventListener('install', function(event) {
         '/base_layout',
         '/static/js/idb.js',
         '/static/js/idbop.js'
+        
       ]);
     })
   );
