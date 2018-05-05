@@ -12,8 +12,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	<style type="text/css">
-
-	
 		.dropdown-span{
 			text-align: center;
 			color: white;
@@ -51,17 +49,11 @@
 			min-height: 100%;
         }
 	</style>
-	<script type="text/javascript">
-		
-	</script>
 </head>
 <body>
 	<div class="wrapper">
-		
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<a class="navbar-brand" href="#"><h2>Feeds</h2></a>
-			
-
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -84,7 +76,6 @@
 					</li>	
 		  	</ul>
 		  	</div>
-
 		</nav>
 		<div id="content" class="container">
 			<br><br><br>
@@ -92,7 +83,7 @@
 
 			{% endblock %}
 			<div id="offlinedata">
-				
+				<!-- the news will get displayed here from indexedDB in offline mode -->
 			</div>
 		<script type="text/javascript" src="{% static 'js/idb.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/idbop.js' %}"></script>
@@ -105,3 +96,4 @@
 	</div>
 </body>
 </html>
+
